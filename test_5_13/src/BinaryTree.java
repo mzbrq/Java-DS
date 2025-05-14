@@ -154,4 +154,28 @@ public class BinaryTree {
 
         return leftHeight > rightHeight ? leftHeight+1 : rightHeight+1;
     }
+
+    //检查是否存在值为 value 的元素
+    public BTNode find(BTNode root, char value) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.value == value) {
+            return root;
+        }
+
+        BTNode left = find(root.left, value);
+        if (left != null) {
+            return left;
+        }
+
+        BTNode right = find(root.right, value);
+        if (right != null) {
+            return right;
+        }
+
+        return null;
+
+    }
 }

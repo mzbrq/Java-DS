@@ -24,5 +24,13 @@ public class Test {
         System.out.println("第 3 层的节点个数：" + binaryTree.getKLevelNodeCount(root, 3));
 
         System.out.println("树的高度：" + binaryTree.getHeight(root));
+
+        BinaryTree.BTNode ret = binaryTree.find(root, 'E');
+
+        if (ret == null) {
+            System.out.println("树中查无该元素");
+        } else {
+            System.out.println("找到元素: " + ret.value);
+        }
     }
 }
